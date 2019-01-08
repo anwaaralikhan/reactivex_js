@@ -17,3 +17,8 @@ Problems :
 How ReactiveX Solves:
 ReactiveX provides a good pattern to control the async event. 
 It combines the Observer pattern with the Iterator pattern and functional programming with collections. So that it makes sequences of events like an array and uses the operators like the Lodash. 
+
+
+#### Rx vs RxJs
+> In short, “rxjs” is rewrite of “rx” and is the latest production-ready version of RxJS.
+> It have better performance, better modularity, better debuggable call stacks while staying mostly backward compatible.
