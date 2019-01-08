@@ -28,10 +28,41 @@ It combines the Observer pattern with the Iterator pattern and functional progra
 * We need to do is import the operators we want to use. 
 
 ##### Import
-> import { of } from 'rxjs';
+```import { of } from 'rxjs';```
 
 ##### Typscript
->  public items = of([1, 2, 3])
+```public items = of([1, 2, 3])```
 
 ##### Html
 ``` <ul> <li *ngFor="let item of items | async"> </li> </ul> ```
+
+
+### Start to create a sample observable and subscribe it!
+Before creating an observable, let’s recognize the essential concepts in RxJS:
+
+> Observable: represents the idea of an invokable collection of future values or events.
+
+> Observer: is a collection of callbacks that knows how to listen to values delivered by the Observable.
+
+> Subscription: represents the execution of an Observable, is primarily useful for canceling the execution.
+
+> Operators: are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, flatMap, etc.
+
+Let’s create a source observable by the operator of create, and internally produce new events. Then, subscribe the source Observable. (I used the previous version of Rx.js which imports all of the operators to let us get the autocompletion)
+
+```
+// create.js
+import Rx from "rx";
+
+const source = Rx.Observable.create(observer => {
+  observer.onNext("yingray say hi!");
+  observer.onNext("frank say hi!");
+  observer.onCompleted();
+});
+
+const subscription = source.subscribe(
+  value => console.log(`Next: ${value}`),
+  error => console.log(`Error: ${error}`),
+  () => console.log("Completed!")
+);
+```
