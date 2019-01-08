@@ -34,6 +34,4 @@ It combines the Observer pattern with the Iterator pattern and functional progra
 >  public items = of([1, 2, 3])
 
 ##### Html
-<ul>
-<li *ngFor="let item of items | async"> </li>
-</ul>
+``` <ul> <li *ngFor="let item of items | async"> </li> </ul> ```
