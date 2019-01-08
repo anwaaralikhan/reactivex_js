@@ -22,3 +22,18 @@ It combines the Observer pattern with the Iterator pattern and functional progra
 #### Rx vs RxJs
 > In short, “rxjs” is rewrite of “rx” and is the latest production-ready version of RxJS.
 > It have better performance, better modularity, better debuggable call stacks while staying mostly backward compatible.
+
+
+#### How to use operators
+* We need to do is import the operators we want to use. 
+
+##### Import
+> import { of } from 'rxjs';
+
+##### Typscript
+>  public items = of([1, 2, 3])
+
+##### Html
+<ul>
+<li *ngFor="let item of items | async"> </li>
+</ul>
